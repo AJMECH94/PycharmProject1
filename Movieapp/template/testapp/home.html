@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Custom Login</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+<div class="container",align="center">
+    {% csrf_token%}
+    <h1 align="center">Welcome, {{request.user}}</h1>
+    <ul align="center"> User Information</ul>
+     <ul align="center">FirstName-{{request.user.first_name}}</ul>
+     <ul align="center">Lastname-{{request.user.last_name}}</ul>
+    <ul align="center">Emailid-{{request.user.email}}</ul>
+    <ul align="center">Password-{{request.user.password}}</ul>
+
+    <h2 align="center"> "JWTToken is" </h2>{{JWTTOKEN}}
+    <h2 align="center"> This Token is valid for 60 min</h2>
+
+    &nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;&nbsp&nbsp;<a href="{% url 'logout'%}" ><button>Logout</button></a>&nbsp&nbsp;
+    <a href="/"><button>Home</button></a>&nbsp&nbsp;
+    <a href="/collection/"><button>MoviesList</button></a>&nbsp&nbsp;
+    <a href="/collectioncreate"><button>Add Movie to collection</button></a>&nbsp&nbsp;
+    <a href="/mycollection"><button>Mycollection List</button></a>&nbsp&nbsp;
+    <a href="/collection/<id>"><button>Update Mycollection</button></a>&nbsp&nbsp;
+    <a href="/movies"><button>ADD Movie to Movieinfo</button></a>&nbsp&nbsp;
+    <a href="/movies/<uid>"><button>Update Movie to Movieinfo</button></a>&nbsp&nbsp;
+
+
+    </div>
+</body>
+</html>
